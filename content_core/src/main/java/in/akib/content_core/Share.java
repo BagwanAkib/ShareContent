@@ -14,7 +14,7 @@ import java.io.File;
  */
 public class Share {
 
-    public String getFileNameFromURI(Uri uri, Context context) {
+    public static String getFileNameFromURI(Uri uri, Context context) {
         String result = null;
         if (uri.getScheme() != null && uri.getScheme().equals("content")) {
             try (Cursor cursor = context.getContentResolver().query(uri, null, null, null, null)) {
@@ -47,7 +47,7 @@ public class Share {
      * @param pictureFile is an optional field if you have uri
      *                    uri or pictureFile single field must be there
      */
-    public void shareFileOnSelectedApp(String app, Context context, String text, Uri uri, File pictureFile) {
+    public static void shareFileOnSelectedApp(String app, Context context, String text, Uri uri, File pictureFile) {
         Uri imageUri;
         if (uri != null)
             imageUri = uri;
@@ -78,7 +78,7 @@ public class Share {
      * @param text    this will help you to pass the text to the application as extra text
      *                uri or pictureFile single field must be there
      */
-    public void shareText(Context context, String title, String text) {
+    public static void shareText(Context context, String title, String text) {
         Intent shareIntent = new Intent();
         shareIntent.setAction(Intent.ACTION_SEND);
         //Add text and then Image URI
@@ -92,7 +92,7 @@ public class Share {
         }
     }
 
-    public void shareOnWhatsApp(Context context, String text, Uri uri, File pictureFile) {
+    public static void shareOnWhatsApp(Context context, String text, Uri uri, File pictureFile) {
         Uri imageUri;
         if (uri != null)
             imageUri = uri;
@@ -114,7 +114,7 @@ public class Share {
         }
     }
 
-    public void shareOnFacebookApp(Context context, String text, Uri uri, File pictureFile) {
+    public static void shareOnFacebookApp(Context context, String text, Uri uri, File pictureFile) {
         Uri imageUri;
         if (uri != null)
             imageUri = uri;
@@ -136,7 +136,7 @@ public class Share {
         }
     }
 
-    public void shareOnTwitterApp(Context context, String text, Uri uri, File pictureFile) {
+    public static void shareOnTwitterApp(Context context, String text, Uri uri, File pictureFile) {
         Uri imageUri;
         if (uri != null)
             imageUri = uri;
@@ -158,7 +158,7 @@ public class Share {
         }
     }
 
-    public void shareOnInstagramApp(Context context, String text, Uri uri, File pictureFile) {
+    public static void shareOnInstagramApp(Context context, String text, Uri uri, File pictureFile) {
         Uri imageUri;
         if (uri != null)
             imageUri = uri;
@@ -180,7 +180,7 @@ public class Share {
         }
     }
 
-    public void shareOnPinterestApp(Context context, String text, Uri uri, File pictureFile) {
+    public static void shareOnPinterestApp(Context context, String text, Uri uri, File pictureFile) {
         Uri imageUri;
         if (uri != null)
             imageUri = uri;
@@ -202,7 +202,7 @@ public class Share {
         }
     }
 
-    public void shareOnOtherApp(Context context, String text, Uri uri, File pictureFile) {
+    public static void shareOnOtherApp(Context context, String text, Uri uri, File pictureFile) {
         Uri imageUri;
         if (uri != null)
             imageUri = uri;
