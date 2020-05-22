@@ -1,0 +1,3 @@
+rootProject.name='ShareContent'
+include ':app'
+include ':content_core'
